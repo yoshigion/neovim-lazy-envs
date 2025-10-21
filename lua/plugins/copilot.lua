@@ -8,7 +8,10 @@ return {
       suggestion = { enabled = false },
       panel = { enabled = false },
       copilot_node_command = "/home/obayashi/.config/nvm/versions/node/v22.20.0/bin/node", -- Node.jsのパス
-      filetypes = { ["*"] = true },
+      filetypes = {
+        ["*"] = true,
+        -- copilotchat = true,
+      },
     })
   end,
 }
