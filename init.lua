@@ -69,9 +69,12 @@ require('lualine').setup({
   options = { theme = 'onedark', },
 })
 
----- copilotchat with jp prompts
---require('lua.plugins.copilotchat-configjp')
-require('copilotchat-configjp')
+---- lua/plugins/copilotchat.lua: avoid conflict <Tab>
+vim.g.copilot_no_tab_map = true
+vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
+
+---- lua/copilotchat-configjp.lua: copilotchat with jp prompts
+--require('copilotchat-configjp')
 
 ---- nvim-treesitter
 --  require'nvim-treesitter.configs'.setup({
