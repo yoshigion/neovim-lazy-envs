@@ -12,15 +12,19 @@ return {
       width = 0.5,
       height = 0.5,
     },
-  },
-  config = function()
-    require("CopilotChat").setup({
-      mappings = {
-        submit_prompt = {
-          normal = '<C-y>',
-          insert = '<C-y>',
-        },
+    mappings = {
+      submit_prompt = {
+        normal = '<C-y>',
+        insert = '<C-y>',
       },
-    })
+    },
+  },
+  config = function(_, opts)
+    local ok, copilotchat = pcall(require, "CopilotChat")
+    if ok then
+      copilotchat.setup(opts)
+    else
+      vim.notify("CopilotChat.nvim not found!", vim.log.levels.ERROR)
+    end
   end,
 }
