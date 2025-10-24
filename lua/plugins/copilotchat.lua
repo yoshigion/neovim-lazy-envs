@@ -8,8 +8,9 @@ return {
   build = "make tiktoken",
   opts = {
     window = {
-      layout = "vertical", -- "float", "vertical", "horizontal" が選択可能
+      layout = "horizontal", -- "float", "vertical", "horizontal" が選択可能
       width = 0.5,
+      height = 0.6,
     },
   },
 }

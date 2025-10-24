@@ -80,7 +80,24 @@ vim.g.copilot_no_tab_map = true
 vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
 
 ---- copilotchat with jp prompts
---require('copilotchat-configjp')
+require('copilotchat-configjp')
+
+---- copilotchat using MCP Server
+require("CopilotChat").setup({
+  functions = {
+    fetch = {
+      description = "Fetch web content",
+      uri = "fetch://{url}",
+      schema = {
+        type = "object",
+        required = { "url" },
+        properties = {
+          url = { type = "string", description = "URL to fetch" },
+        },
+      },
+    },
+  },
+})
 
 ---- nvim-treesitter
 --  require'nvim-treesitter.configs'.setup({
