@@ -15,8 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- プラグインリストをここに追加
-  -- tree file list
-  { "nvim-tree/nvim-tree.lua" },
 
   -- status line
   { "nvim-lualine/lualine.nvim" },
