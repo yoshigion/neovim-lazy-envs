@@ -16,9 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- プラグインリストをここに追加
 
-  -- tree sitter
-  { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
-
   -- import lua/plugins/*.lua
   { import = "plugins" },
 

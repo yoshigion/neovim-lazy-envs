@@ -1,7 +1,7 @@
 # neovim-lazy-envs
 Neovim Lazy setup environment files for myself
 
-(current)
+(previous)
 .
 ├── init.lua
 ├── lazy.nvim (git repos)
@@ -17,20 +17,52 @@ Neovim Lazy setup environment files for myself
     GitHub copilot.lua:  https://github.com/zbirenbaum/copilot.lua
 
 
+(current)
+.
+├── LICENSE
+├── README.md
+├── init.lua
+└── lua
+    ├── configs-setup.lua
+    ├── configs
+    │   ├── autocmds.lua
+    │   ├── keymaps.lua
+    │   └── options.lua
+    ├── copilotchat-configjp.lua
+    ├── plugins-setup.lua
+    └── plugins
+        ├── cmp.lua
+        ├── copilot-cmp.lua
+        ├── copilot.lua
+        ├── copilotchat.lua
+        ├── lualine.lua
+        ├── nvim-tree.lua
+        ├── nvim-treesitter.lua
+        └── onedark.lua
+
+4 directories, 18 files
+
+
 (near future)
 .
-├── README.txt
+├── LICENSE
+├── README.md
 ├── init.lua
-├── lazy.nvim
 └── lua
-    ├── autocmds.lua
-    ├── keymaps.lua
-    ├── lazy.lua
-    ├── options.lua
+    ├── configs-setup.lua
+    ├── configs
+    │   ├── autocmds.lua
+    │   ├── keymaps.lua
+    │   └── options.lua
+    ├── plugins-setup.lua
     └── plugins
-        ├── cmp.lua
-        ├── copilot-cmp.lua
-        ├── copilot.lua
-        └── copilotchat.lua
+        ├── cmp.lua
+        ├── copilot-cmp.lua
+        ├── copilot.lua
+        ├── copilotchat.lua
+        ├── copilotchat-configjp.lua
+        ├── lualine.lua
+        ├── nvim-tree.lua
+        ├── nvim-treesitter.lua
+        └── onedark.lua
 
-19 directories, 86 files
