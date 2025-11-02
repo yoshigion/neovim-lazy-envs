@@ -16,10 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- プラグインリストをここに追加
 
-  -- status line
-  { "nvim-lualine/lualine.nvim" },
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-
   -- tree sitter
   { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
 
