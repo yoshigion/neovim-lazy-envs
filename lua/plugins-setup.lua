@@ -22,9 +22,6 @@ require("lazy").setup({
   { "nvim-lualine/lualine.nvim" },
     dependencies = { 'nvim-tree/nvim-web-devicons' },
 
-  -- onedark color scheme
-  { "navarasu/onedark.nvim" },
-
   -- tree sitter
   { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
 
