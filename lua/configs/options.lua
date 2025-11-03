@@ -1,6 +1,6 @@
 -- lua/config/options.lua
 -- disable mouse
-vim.opt.mouse=""
+vim.opt.mouse="" -- disable mouse
 
 -- specify python under pyenv
 vim.g.python3_host_prog = '~/.pyenv/versions/3.12.11/bin/python'
