@@ -13,8 +13,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- プラグイン定義
 require("lazy").setup({
-  -- プラグインリストをここに追加
 
   -- import lua/plugins/*.lua
   { import = "plugins" },
