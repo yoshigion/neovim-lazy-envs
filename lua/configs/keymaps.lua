@@ -4,7 +4,6 @@ local opts = { noremap = true, silent = true }
 
 ---- nvim-tree.lua
 -- Ctrl-e to toggle nvim-tree
---vim.api.nvim_set_keymap('n', '<C-e>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 map("n", "<C-e>", ":NvimTreeToggle<CR>", opts)
 
 ---- copilotchat.lua: avoid conflict <Tab>
