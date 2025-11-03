@@ -12,7 +12,7 @@ return {
         "javascript", "html", "css", "json", "bash", "yaml", "make", "awk"
       },
       indent = {
-	enable = true,
+	enable = true
       },
     })
   end,
