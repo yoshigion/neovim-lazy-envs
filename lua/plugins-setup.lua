@@ -1,5 +1,5 @@
--- plugins-setup.lua
--- lazy.nvim のセットアップ
+-- lua/plugins-setup.lua
+-- Lazy.nvimのブートストラップ（自動インストール）
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,10 +13,48 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- プラグイン定義
+-- プラグインのセットアップ
 require("lazy").setup({
 
-  -- import lua/plugins/*.lua
+  -- lua/plugins/*.lua を自動的にインポート
   { import = "plugins" },
 
+}, {
+  -- Lazy.nvim自体の設定
+  defaults = {
+    lazy = false, -- デフォルトでは遅延読み込みしない
+    version = nil, -- 常に最新版を使用
+  },
+  checker = {
+    enabled = true, -- 起動時に更新をチェック
+    notify = false, -- 通知を無効化
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+  ui = {
+    border = "rounded",
+    icons = {
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
+    },
+  },
 })
