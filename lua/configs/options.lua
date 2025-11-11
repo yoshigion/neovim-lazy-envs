@@ -24,3 +24,5 @@ vim.opt.termguicolors = true
 
 ---- copilotchat.lua: avoid conflict <Tab>
 vim.g.copilot_no_tab_map = true
+
+--vim.g.mapleader = " " -- <leader>キーをバックスラッシュからスペースに変更する
