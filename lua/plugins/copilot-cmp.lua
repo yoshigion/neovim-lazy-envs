@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/plugins/copilot-cmp.lua
+-- lua/plugins/copilot-cmp.lua
 return {
   "zbirenbaum/copilot-cmp",
   dependencies = { "zbirenbaum/copilot.lua" },

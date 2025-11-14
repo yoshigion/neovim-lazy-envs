@@ -8,7 +8,7 @@ if not vim.loop.fs_stat(lazypath) then
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",
-    lazypath
+    lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
@@ -18,7 +18,6 @@ require("lazy").setup({
 
   -- lua/plugins/*.lua を自動的にインポート
   { import = "plugins" },
-
 }, {
   -- Lazy.nvim自体の設定
   defaults = {
