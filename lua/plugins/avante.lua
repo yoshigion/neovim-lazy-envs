@@ -25,6 +25,20 @@ return {
           require("mcphub.extensions.avante").mcp_tool(),
         }
       end,
+      -- Avoiding conflicts with Avante built-in tools
+      -- https://ravitemer.github.io/mcphub.nvim/extensions/avante.html#tool-conflicts
+      disabled_tools = {
+        "list_files",    -- Built-in file operations
+        "search_files",
+        "read_file",
+        "create_file",
+        "rename_file",
+        "delete_file",
+        "create_dir",
+        "rename_dir",
+        "delete_dir",
+        "bash",         -- Built-in terminal access
+      },
     })
   end,
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
