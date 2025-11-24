@@ -24,7 +24,7 @@ return {
           description = "コードの説明をお願いする",
         },
         Review = {
-          prompt = "/COPILOT_REVIEW コードを日本語でレビューし、レビューコメントにはコード修正案も示してください。",
+          prompt = "/COPILOT_REVIEW コードをレビューし、レビューコメントにはコード修正案も示してください。",
           mapping = "<leader>cr",
           description = "コードのレビューをお願いする",
         },
