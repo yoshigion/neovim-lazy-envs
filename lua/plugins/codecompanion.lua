@@ -1,6 +1,7 @@
 -- lua/plugins/codecompanion.lua
 return {
   "olimorris/codecompanion.nvim",
+  version = "v17.33.0",
   opts = {},
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
