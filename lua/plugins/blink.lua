@@ -3,6 +3,8 @@ return {
   "saghen/blink.cmp",
   -- optional: provides snippets for the snippet source
   dependencies = {
+    -- https://github.com/Kaiser-Yang/blink-cmp-avante#installation
+    { 'Kaiser-Yang/blink-cmp-avante' },
     { 'rafamadriz/friendly-snippets' },
   },
   -- use a release tag to download pre-built binaries
@@ -41,7 +43,18 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      -- Add 'avante' to the list: https://github.com/Kaiser-Yang/blink-cmp-avante?tab=readme-ov-file#installation
+      default = { 'avante', 'lsp', 'path', 'snippets', 'buffer' },
+      -- https://github.com/Kaiser-Yang/blink-cmp-avante?tab=readme-ov-file#installation
+      providers = {
+        avante = {
+          module = 'blink-cmp-avante',
+          name = 'Avante',
+          opts = {
+            -- options for blink-cmp-avante
+          }
+        }
+      },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
