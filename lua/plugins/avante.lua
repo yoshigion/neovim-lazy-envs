@@ -12,21 +12,8 @@ return {
   },
   config = function()
     require("avante").setup({
-      -- system_prompt as function ensures LLM always has latest MCP server state
-      -- https://ravitemer.github.io/mcphub.nvim/extensions/avante.html#add-tools-to-avante
-      -- This is evaluated for every message, even in existing chats
-      system_prompt = function()
-        local hub = require("mcphub").get_hub_instance()
-        return hub and hub:get_active_servers_prompt() or ""
-      end,
-      -- Using function prevents requiring mcphub before it's loaded
-      custom_tools = function()
-        return {
-          require("mcphub.extensions.avante").mcp_tool(),
-        }
-      end,
-      -- Avoiding conflicts with Avante built-in tools
       -- https://ravitemer.github.io/mcphub.nvim/extensions/avante.html#tool-conflicts
+      -- Avoiding conflicts with Avante built-in tools
       disabled_tools = {
         "list_files",    -- Built-in file operations
         "search_files",
@@ -39,6 +26,19 @@ return {
         "delete_dir",
         "bash",         -- Built-in terminal access
       },
+      -- https://ravitemer.github.io/mcphub.nvim/extensions/avante.html#add-tools-to-avante
+      -- system_prompt as function ensures LLM always has latest MCP server state
+      -- This is evaluated for every message, even in existing chats
+      system_prompt = function()
+        local hub = require("mcphub").get_hub_instance()
+        return hub and hub:get_active_servers_prompt() or ""
+      end,
+      -- Using function prevents requiring mcphub before it's loaded
+      custom_tools = function()
+        return {
+          require("mcphub.extensions.avante").mcp_tool(),
+        }
+      end,
     })
   end,
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
