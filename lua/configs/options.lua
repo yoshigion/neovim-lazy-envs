@@ -27,3 +27,22 @@ vim.g.copilot_no_tab_map = true
 
 ----- <leader>キーをバックスラッシュからスペースに変更する
 vim.g.mapleader = "\\"
+
+----- clipboard sharing between wsl2 and windows
+vim.opt.clipboard = "unnamedplus"
+--vim.opt.clipboard = "unnamed"
+
+if vim.fn.has("wsl") == 1 then
+  vim.g.clipboard = {
+    name = "win32yank-wsl",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = 0,
+  }
+end
