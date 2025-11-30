@@ -52,7 +52,7 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-        { name = "copilot" }, -- ← copilot-cmp を使う場合
+        -- { name = "copilot" }, -- ← copilot-cmp を使う場合
       }),
     })
   end,
