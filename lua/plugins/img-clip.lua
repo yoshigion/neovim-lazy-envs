@@ -1,6 +1,6 @@
 -- lua/plugins/img-clip.lua
 return {
-  "HakonHarnes/img-clip.nvim",
+  "yoshigion/img-clip.nvim",
   event = "VeryLazy",
   opts = {
     -- add options here
