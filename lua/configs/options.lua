@@ -25,10 +25,10 @@ vim.opt.termguicolors = true
 ---- copilotchat.lua: avoid conflict <Tab>
 vim.g.copilot_no_tab_map = true
 
------ <leader>キーをバックスラッシュからスペースに変更する
+---- <leader>キーをバックスラッシュからスペースに変更する
 vim.g.mapleader = "\\"
 
------ clipboard sharing between wsl2 and windows
+---- clipboard sharing between wsl2 and windows
 vim.opt.clipboard = "unnamedplus"
 --vim.opt.clipboard = "unnamed"
 
