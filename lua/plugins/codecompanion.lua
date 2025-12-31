@@ -1,7 +1,7 @@
 -- lua/plugins/codecompanion.lua
 return {
   "olimorris/codecompanion.nvim",
-  version = "v17.33.0",
+  version = "v18.0.0",  -- This version is dependent on and decided by mcphub.nvim
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter" },
