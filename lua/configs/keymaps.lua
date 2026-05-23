@@ -12,3 +12,10 @@ map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 
 ---- copilotchat.lua: avoid conflict <Tab>
 map("i", "<S-Tab>", 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
+
+-- CodeCompanion (<leader>a = AI prefix で統一)
+map({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionChat<cr>",        { desc = "[AI] Chat を開く" })
+map({ "n", "v" }, "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "[AI] Chat トグル" })
+map("n",          "<leader>ai", "<cmd>CodeCompanion<cr>",            { desc = "[AI] インライン編集" })
+map("v",          "<leader>ai", ":CodeCompanion<cr>",                { desc = "[AI] 選択範囲をインライン編集" })
+map({ "n", "v" }, "<leader>as", "<cmd>CodeCompanionChat Add<cr>",    { desc = "[AI] 選択をチャットへ" })
