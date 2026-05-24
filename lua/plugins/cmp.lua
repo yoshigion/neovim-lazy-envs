@@ -10,6 +10,8 @@ return {
     { "saadparwaiz1/cmp_luasnip" },
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
+    { "milanglacier/minuet-ai.nvim" },
+    { "nvim-lua/plenary.nvim" },
   },
   config = function()
     local cmp = require("cmp")
@@ -50,6 +52,7 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "minuet" },
         { name = "buffer" },
         { name = "path" },
         { name = "copilot" }, -- ← copilot-cmp を使う場合
