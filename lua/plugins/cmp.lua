@@ -12,6 +12,7 @@ return {
     { "rafamadriz/friendly-snippets" },
     { "milanglacier/minuet-ai.nvim" },
     { "nvim-lua/plenary.nvim" },
+    { "zbirenbaum/copilot-cmp" },  -- ← 追加
   },
   config = function()
     local cmp = require("cmp")
