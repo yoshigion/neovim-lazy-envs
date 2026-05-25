@@ -48,6 +48,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-j>"] = require("minuet").make_cmp_map(),  -- 手動でClaude補完を呼ぶ
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
