@@ -62,7 +62,8 @@ return {
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- For luasnip users.
-        { name = "minuet" },
+        { name = "minuet" }, -- ← claude を minuet-ai 経由で使う場合
+        { name = "llm" }, -- ← gpt を llm.nvim 経由で使う場合
         { name = "buffer" },
         { name = "path" },
         { name = "copilot" }, -- ← copilot-cmp を使う場合
