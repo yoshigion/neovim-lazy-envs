@@ -46,6 +46,14 @@ if vim.fn.has("wsl") == 1 then
   }
 end
 
+---- lsp/efm.lua
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+  callback = function()
+    vim.diagnostic.setloclist({ open = false })
+  end,
+  desc = "診断更新時にLocationListも自動更新",
+})
+
 ---- rustaceanvim.lua
 --vim.g.rustaceanvim = {
 --  server = {

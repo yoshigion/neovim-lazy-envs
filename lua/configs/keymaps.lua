@@ -19,3 +19,11 @@ map({ "n", "v" }, "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "[
 map("n",          "<leader>ai", "<cmd>CodeCompanion<cr>",            { desc = "[AI] インライン編集" })
 map("v",          "<leader>ai", ":CodeCompanion<cr>",                { desc = "[AI] 選択範囲をインライン編集" })
 map({ "n", "v" }, "<leader>as", "<cmd>CodeCompanionChat Add<cr>",    { desc = "[AI] 選択をチャットへ" })
+
+-- diagnostic keymaps
+map("n", "]d", function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "次の診断へジャンプしてフロート表示" })
+map("n", "[d", function()
+  vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "前の診断へジャンプしてフロート表示" })

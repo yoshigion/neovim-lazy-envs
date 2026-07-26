@@ -1,0 +1,43 @@
+-- ~/.config/nvim/lsp/efm.lua
+-- efm-langserver 経由で textlint を AsciiDoc の診断として使う設定。
+-- Neovim 0.11+ のネイティブ LSP 設定方式 (vim.lsp.config / vim.lsp.enable) 前提。
+-- init.lua 側に vim.lsp.enable("efm") を1行追加すること。
+
+return {
+  cmd = { "efm-langserver" },
+
+  -- .adoc / .asciidoc は Neovim 標準の filetype 検出で asciidoc になる
+  filetypes = { "asciidoc" },
+
+  -- プロジェクトルートの判定。.textlintrc.json を最優先にすることで
+  -- プロジェクトローカルの textlint 設定が使われる
+  root_markers = { ".textlintrc.json", ".textlintrc", "package.json", ".git" },
+
+  init_options = {
+    documentFormatting = false,
+    documentRangeFormatting = false,
+  },
+
+  settings = {
+    rootMarkers = { ".textlintrc.json", ".textlintrc", ".git/" },
+    languages = {
+      asciidoc = {
+        {
+          -- グローバルインストール(npm install -g)前提で textlint を直接呼ぶ。
+          -- プロジェクトローカル運用に戻す場合は
+          -- "npx --no-install textlint --format unix --stdin --stdin-filename ${INPUT}" に変更。
+          -- ${INPUT} を --stdin-filename に渡すことで textlint-plugin-asciidoctor が
+          -- 拡張子 .adoc を認識して AsciiDoc パーサーを選択する。
+          lintCommand = "textlint --format unix --stdin --stdin-filename ${INPUT}",
+          lintStdin = true,
+          -- textlint --format unix の出力: /path/file.adoc:12:5: メッセージ [ルール名]
+          lintFormats = { "%f:%l:%c: %m" },
+          -- textlint は指摘ありのとき exit code 1 を返すのでエラー扱いにしない
+          lintIgnoreExitCode = true,
+          lintSource = "textlint",
+          rootMarkers = { ".textlintrc.json", ".textlintrc" },
+        },
+      },
+    },
+  },
+}
