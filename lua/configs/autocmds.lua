@@ -1,4 +1,4 @@
--- lua/config/autocmds.lua
+-- lua/configs/autocmds.lua
 
 --local group = vim.api.nvim_create_augroup("MyAutoCmds", { clear = true })
 
