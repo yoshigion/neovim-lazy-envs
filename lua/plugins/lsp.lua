@@ -11,6 +11,7 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
+        "efm",
         --"pyright",  -- Python
         --"tsserver", -- TypeScript/JavaScript
         --"bashls",   -- Bash
