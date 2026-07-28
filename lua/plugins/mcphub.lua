@@ -22,8 +22,8 @@ return {
         },
       },
       -- https://ravitemer.github.io/mcphub.nvim/extensions/avante.html#global-auto-approval
-      -- This sets vim.g.mcphub_auto_approve to true by default (can also be toggled from the HUB UI with `ga`)
-      auto_approve = true,
+      -- MCPツール呼び出しは毎回手動承認する（HUB UIの`ga`でトグル可能）
+      auto_approve = false,
     })
   end
 }
