@@ -18,6 +18,13 @@ return {
     documentRangeFormatting = false,
   },
 
+  -- Neovim組み込みの増分同期(Incremental Sync)は、日本語などマルチバイト文字を
+  -- 含む編集で compute_end_range が assertion failed になることがあるため、
+  -- 常に全文同期(Full Sync)を使うようにする。
+  flags = {
+    allow_incremental_sync = false,
+  },
+
   settings = {
     rootMarkers = { ".textlintrc.json", ".textlintrc", ".git/" },
     languages = {
