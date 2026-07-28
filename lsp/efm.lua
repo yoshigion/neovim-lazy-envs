@@ -1,7 +1,7 @@
 -- ~/.config/nvim/lsp/efm.lua
 -- efm-langserver 経由で textlint を AsciiDoc の診断として使う設定。
 -- Neovim 0.11+ のネイティブ LSP 設定方式 (vim.lsp.config / vim.lsp.enable) 前提。
--- init.lua 側に vim.lsp.enable("efm") を1行追加すること。
+-- lua/plugins/lsp.lua 側の vim.lsp.enable({ ... }) に "efm" を含めること。
 
 return {
   cmd = { "efm-langserver" },

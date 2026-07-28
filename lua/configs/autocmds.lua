@@ -1,6 +1,4 @@
--- lua/config/autocmds.lua
-
-vim.lsp.enable("efm")
+-- lua/configs/autocmds.lua
 
 --local group = vim.api.nvim_create_augroup("MyAutoCmds", { clear = true })
 

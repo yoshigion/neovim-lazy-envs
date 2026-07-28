@@ -11,6 +11,7 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
+        "efm",
         --"pyright",  -- Python
         --"tsserver", -- TypeScript/JavaScript
         --"bashls",   -- Bash
@@ -19,11 +20,11 @@ return {
       automatic_installation = true,
     })
 
-    -- 各LSPの設定を読み込む
-    require("lsp.lua_ls")
-    --require("lsp.pyright")
-    --require("lsp.tsserver")
-    --require("lsp.bashls")
-    --require("lsp.marksman")
+    -- lsp/*.lua (Neovim 0.11+ ネイティブ形式) を読み込んで有効化
+    vim.lsp.enable({ "lua_ls", "efm" })
+    --vim.lsp.enable("pyright")
+    --vim.lsp.enable("tsserver")
+    --vim.lsp.enable("bashls")
+    --vim.lsp.enable("marksman")
   end,
 }
