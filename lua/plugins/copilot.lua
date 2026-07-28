@@ -11,7 +11,7 @@ return {
       panel = {
         enabled = false
       },
-      copilot_node_command = "/home/obayashi/.config/nvm/versions/node/v22.20.0/bin/node", -- Node.jsのパス
+      copilot_node_command = vim.fn.exepath("node") ~= "" and vim.fn.exepath("node") or "node", -- PATH上の node を動的に解決（nvmのバージョン切替に追従）
       filetypes = {
         ["*"] = true,
         -- copilotchat = true,
